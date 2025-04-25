@@ -1,0 +1,47 @@
+/* Custom Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(130deg, #6E00C9, #1C2803,black,white);
+  font-family: fantasy;
+}
+
+/* Profile Image */
+
+/* Tech Stack */
+.tech-stack span {
+  font-weight: 600;
+  color: #fff;
+  
+}
+
+/* Advanced Topics */
+#advanced-topics h4 {
+ 
+  font-weight: 600;
+  font-size: 1.2rem;
+  font-family: fantasy;
+  
+}
+
+
+.profile-image {
+  margin-top: 20px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #F39C12; /* Primary Border */
+  box-shadow: 0px 0px 15px 5px rgba(243, 156, 18, 0.8) !important;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Glow Effect on Hover */
+.profile-image:hover {
+  box-shadow: 0px 0px 2px 1px rgba(243, 16, 1, 0.2);
+  transform: scale(1.1);
+}
+

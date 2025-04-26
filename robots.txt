@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rajib-fakir.netlify.app/sitemap.xml

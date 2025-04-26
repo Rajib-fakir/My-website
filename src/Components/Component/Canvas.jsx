@@ -13,9 +13,9 @@ const Canvas = () => {
               {/* Left Content */}
               <div className="col-lg-6 text-lg-start text-center">
                 <h1 className="display-4 fw-bold">Hi, I'm a Web Developer</h1>
-                <p className="lead">
+                <h6 className="lead">
                   I build high-performance, secure, and scalable web applications.
-                </p>
+                </h6>
                 <p className="tech-stack">
                 
 

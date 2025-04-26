@@ -1,8 +1,17 @@
-import React from "react";
+import React,{lazy} from "react";
 import "../../../public/styles/About.css"; // কাস্টম স্টাইল
-
+const Seo = lazy(() => import("../../../Seo.jsx"));
 const About = () => {
-  return (
+  return (<>
+  <Seo 
+  title="About || Rajib Fakir - Full Stack Web Developer in Bangladesh"
+  keywords="Rajib Fakir, Full Stack Developer Bangladesh, Freelance Web Developer, Custom Website Developer, Web Developer Portfolio, Professional Web Developer Bangladesh, Frontend Backend Developer, Responsive Web Developer, Project Based Developer, Web Solutions Expert, Hire Web Developer Bangladesh, Modern Web Development"
+  path="/about"
+  description="Learn more about Rajib Fakir, a highly skilled Full Stack Web Developer from Bangladesh. Specializing in custom, responsive, and project-based web solutions, Rajib helps businesses and individuals build high-performing websites tailored to their goals. Explore his journey, skills, and portfolio."
+/>
+
+    
+    
     <div className="about-container">
       {/* Hero Section */}
 
@@ -86,7 +95,7 @@ Passionate about crafting modern, user-friendly web experiences. I specialize in
       {/* Footer */}
 
     </div>
-  );
+ </> );
 };
 
 export default About;

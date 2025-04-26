@@ -1,4 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef,lazy } from 'react';
+
+const Seo = lazy(() => import("../../../Seo.jsx"));
+
+
+
 import '../../../public/styles/AiChat.css';
 
 const AiChat = () => {
@@ -7,7 +12,6 @@ const AiChat = () => {
   const [typing, setTyping] = useState(false);
   const chatEndRef = useRef(null);
 
-console.log(window)
 
   const apiKey = "AIzaSyDm-vj2p6wgvORrYeFYGtHhhPvAqwOqQW4";
   const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
@@ -101,7 +105,7 @@ useEffect(() => {
     await simulateTyping(aiReply);
 
   } catch (error) {
-    console.error(error);
+    
     alert("Request failed");
   }
 
@@ -115,7 +119,20 @@ useEffect(() => {
    
   };
 
-  return (
+  return (<>
+      <Seo 
+  title="Ai Chat"
+  keywords="AI Chat, Google Gemini Chat, Chat with AI, Gemini AI Integration, Smart Chatbot, AI Assistant, Rajib Fakir AI Project, Conversational AI, Gemini API Demo, AI Messaging
+"
+  path="/ai"
+  description="Chat live with an intelligent AI powered by Google Gemini API. Experience real-time conversation through my custom-built interface, developed by Full Stack Web Developer Rajib Fakir."
+/>
+  
+  
+  
+  
+  
+  
     <div className=" main-chat p-0 m-0 ">
 <div className="chat-window p-2 py-5">
         {messages.map((msg, index) => (
@@ -152,7 +169,7 @@ useEffect(() => {
         </div>
       </div>
     </div>
-  );
+ </> );
 };
 
 export default AiChat;

@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 const Seo = ({ title, keywords, path, description }) => {
   const baseUrl = "https://rajib-fakir.netlify.app";
   const fullUrl = `${baseUrl}${path || ''}`;
-  const image = `${baseUrl}/Images/About-image.jpeg`;
+  const image = `${baseUrl}/Images/favicon.ico`;
   return (<>
     <Helmet>
       {/* Title and Description */}
@@ -41,16 +41,19 @@ const Seo = ({ title, keywords, path, description }) => {
       {/* Author & Theme Color */}
       <meta name="author" content="Rajib-Fakir" />
       <meta name="theme-color" content="#ffffff" />
-
-      {/* Structured Data - JSON-LD */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "name": "Rajib-Fakir",
-          "url": baseUrl,
-        })}
-      </script>
+   <meta name="robots" content="index, follow" />
+   
+   <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Rajib fakir",
+      "url":fullUrl
+    })
+  }}
+></script>
     </Helmet>
    
  </> );

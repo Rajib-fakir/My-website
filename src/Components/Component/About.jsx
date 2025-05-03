@@ -12,18 +12,18 @@ const About = () => {
 
     
     
-    <div className="about-container">
+    <div className="about-container bg-primary">
       {/* Hero Section */}
 
-<section className="about-content container">
-  <div className="row align-items-center info-box stylish-box">
+<section className="about-content container  ">
+  <div className="row align-items-center info-box stylish-box w-100 m-auto">
     <div className="col-lg-6 text-center">
-      <div className="profile-img-wrapper">
+      <div data-aos="zoom-in" className="profile-img-wrapper">
         <img src="/Images/About-image.jpeg" alt="My Profile" className="profile-img" />
       </div>
     </div>
     <div className="col-lg-6 mt-5 text-box">
-      <div className="card m-2 strip xx text-center">
+      <div data-aos="zoom-in" className="card m-2 strip xx text-center">
               <i class="bi bi-alarm text-success"> </i>
         <h5 className="card-header mb-2 text-center text-primary">
 
@@ -37,7 +37,7 @@ Passionate about crafting modern, user-friendly web experiences. I specialize in
       
       
       
-      <div className="card m-2 strip text-center">
+      <div data-aos="zoom-in" className="card m-2 strip text-center">
         <p>
          <h2 className="card-header  text-center mb-2 text-primary">
          <i class="bi bi-patch-check-fill text-success"> </i>
@@ -45,7 +45,7 @@ Passionate about crafting modern, user-friendly web experiences. I specialize in
           I ensure high performance and responsive designs.
         </p>
       </div>
-      <div className="card hire-card m-2 p-1">
+      <div data-aos="fade-right" className="card hire-card m-2 p-1">
         <a href="/contact" className="btn btn-gradient card-header h5 p-0 m-0">Hire Me <i class="bi bi-arrow-right "></i></a>
       </div>
     </div>

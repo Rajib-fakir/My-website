@@ -9,7 +9,7 @@ const NavBar=lazy(()=>import("./Components/RouteComponents/RouterList.jsx"))
 
 const AppContent = () => {
   return (<><div className="main-body">
-  <div>
+  <div >
   <NavBar />
   </div>
   <AppRoutes />

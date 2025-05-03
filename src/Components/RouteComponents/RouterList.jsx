@@ -33,20 +33,20 @@ useEffect(() => {
 
   return (
     <div>
-      <nav className="navbar">
-        <div className="logo">
+      <nav  className="navbar">
+        <div data-aos="fade-in" className="logo">
         <img src={logo} alt="logo"  className="img-logo"/>
         
         </div>
         {/* Hamburger Menu */}
-        <button className="menu-toggle" onClick={toggleMenu}>
+        <button data-aos="fade-in" className="menu-toggle" onClick={toggleMenu}>
           ☰
         </button>
-        <div className={`overlay ${menuOpen ? "active" : ""}`} onClick={toggleMenu}></div>
-        <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
-        <span className="close-sideBar" onClick={toggleMenu}>❌</span>
+        <div data-aos="fade-in" className={`overlay ${menuOpen ? "active" : ""}`} onClick={toggleMenu}></div>
+        <ul  className={`nav-links ${menuOpen ? "active" : ""}`}>
+        <span data-aos="fade-in" className="close-sideBar" onClick={toggleMenu}>❌</span>
           {navLinks.map((link, index) => (
-            <li
+            <li 
               key={index}
               className={
                 location.pathname === link.path ? "active-link" : ""

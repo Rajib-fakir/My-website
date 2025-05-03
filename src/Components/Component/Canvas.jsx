@@ -12,11 +12,11 @@ const Canvas = () => {
             <div className="row align-items-center">
               {/* Left Content */}
               <div className="col-lg-6 text-lg-start text-center">
-                <h1 className="display-4 fw-bold">Hi, I'm a Web Developer</h1>
-                <h6 className="lead">
+                <h1 data-aos="zoom-out" className="display-4 fw-bold">Hi, I'm a Web Developer</h1>
+                <h6 data-aos="fade-left" className="lead">
                   I build high-performance, secure, and scalable web applications.
                 </h6>
-                <p className="tech-stack">
+                <p data-aos="fade-right"  className="tech-stack">
                 
 
                 
@@ -35,17 +35,17 @@ const Canvas = () => {
               {/* Right Content - Profile Image */}
               <div className="col-lg-6 text-center">
               <div className="shadow-glow">
-                <img
+                <img data-aos="fade-zoom-in"
                   src="/Images/Home-image.jpg"
                   alt="Developer"
                   className="profile-image "
                 />
-                
-                          <a href="#projects" className="btn btn-warning btn-lg mt-5 p-1 m-0">
-                  View My Work                 <i class="bi bi-arrow-right-circle h1 text-info"></i>
+                <div>
+                          <a data-aos="fade-right" href="#projects" className="btn btn-warning btn-lg mt-5 p-2 m-0">
+                  View My Work                 <i class="bi h5 bi-arrow-right-circle h1 text-info"></i>
                 </a>      
                 
-                
+                </div>
                 </div>
               </div>
             </div>
@@ -55,11 +55,11 @@ const Canvas = () => {
         {/* Advanced Topics Section */}
         <section id="advanced-topics" className="py-5 ">
           <div className="container">
-            <h1 className="text-center fw-bold text-success">Advanced Topics</h1>
+            <h1 data-aos="zoom-out" className="text-center fw-bold text-success">Advanced Topics</h1>
            <hr className="text-light" />
             <div className="row text-center mt-4">
               <div className="col-md-3 mt-2">
-              <div className="card p-1 m-1 h-100 strip">
+              <div data-aos="slide-up" className="card p-1 m-1 h-100 strip">
                            <i class="bi bi-code-slash h1  p-0 m-0 text-success "> </i>     
                 <h5 className="text-primary card-header p-1 m-1 ">
 
@@ -68,7 +68,7 @@ const Canvas = () => {
              </div>
               </div>
               <div className="col-md-3 mt-5">
-                <div className="card p-1 m-1 h-100 strip">
+                <div data-aos="slide-up" className="card p-1 m-1 h-100 strip">
                <i class="bi bi-shield-check text-success p-0 m-0"></i>
                
                 <h5 className="text-primary card-header p-1 m-1">Security Best Practices</h5>
@@ -76,7 +76,7 @@ const Canvas = () => {
              </div>
               </div>
               <div className="col-md-3 mt-5">
-               <div className="card p-1 m-1 h-100 strip">
+               <div data-aos="slide-up" className="card p-1 m-1 h-100 strip">
                
             <i class="bi bi-router p-0 m-0 text-success"></i>   
                
@@ -85,7 +85,7 @@ const Canvas = () => {
              </div>
               </div>
               <div className="col-md-3 mt-5">
-             <div className="card p-1 m-1 h-100 strip">
+             <div data-aos="slide-up" className="card p-1 m-1 h-100 strip">
               
            <i class="bi bi-database-fill-lock p-0 m-0 text-success"></i>   
               

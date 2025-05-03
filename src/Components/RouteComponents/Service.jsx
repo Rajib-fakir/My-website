@@ -48,8 +48,8 @@ const ServicePage = () => {
       <div className="text-success">
         <section className="container py-5">
           <div className="text-center mb-5">
-            <h1 className="fw-bold">What We Offer</h1>
-            <p className="text-muted fs-5">
+            <h1 data-aos="zoom-in" className="fw-bold">What We Offer</h1>
+            <p data-aos="fade-in" className="text-muted fs-5">
               Explore our range of services designed to grow your business and enhance your digital presence.
             </p>
           </div>
@@ -57,7 +57,7 @@ const ServicePage = () => {
           <div className="row g-4">
             {services.map((service, index) => (
               <div className="col-md-6 col-lg-4" key={index}>
-                <div className="card h-100 border-0 shadow-sm">
+                <div data-aos="fade-in" className="card h-100 border-0 shadow-sm">
                   <div className="card-body text-center p-4">
                     <i className={`bi ${service.icon} fs-1 text-primary mb-3`}></i>
                     <h5 className="card-title fw-semibold">{service.title}</h5>

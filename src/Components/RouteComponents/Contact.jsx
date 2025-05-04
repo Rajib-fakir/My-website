@@ -6,9 +6,34 @@ const Contact = () => {
   const form = useRef();
   const [showModal, setShowModal] = useState(false);
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
-    setShowModal(true);
+
+    const formData = new FormData(form.current);
+    const data = {
+      email: formData.get("reply_to"),
+      name: formData.get("from_name"),
+      message: formData.get("message"),
+    };
+
+    try {
+      const response = await fetch("https://portfoli-server-1.onrender.com/Comment", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setShowModal(true);
+        form.current.reset();
+      } else {
+        console.error("Server error:", await response.text());
+      }
+    } catch (error) {
+      console.error("Network error:", error);
+    }
   };
 
   return (
@@ -20,7 +45,6 @@ const Contact = () => {
         description="Get in touch with Rajib Fakir — a professional Full Stack Web Developer from Bangladesh. Contact via email, WhatsApp, Facebook, or direct phone call for innovative, high-quality web solutions."
       />
 
-      {/* Schema for SEO */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
@@ -42,107 +66,111 @@ const Contact = () => {
         })}
       </script>
 
-      <div className="container py-5 main" id="contact">
-        <div className="row justify-content-center mb-4">
-          <div className="col-lg-8 text-center">
-            <h2 className="fw-bold mb-3 text-light">Contact Me</h2>
-            <p className="text-muted">
-              I'm always open to discussing projects, ideas, or just having a chat!
-            </p>
-          </div>
+      <div className="container py-5" id="contact">
+        <div className="text-center mb-5">
+          <h2 className="fw-bold text-primary">Let's Get in Touch</h2>
+          <p className="text-muted">
+            I'm always open to discussing projects, collaborations, or freelance opportunities.
+          </p>
         </div>
 
-        <div className="row g-4 p-2">
+        <div className="row g-5">
           {/* Contact Form */}
           <div className="col-md-7">
-            <form ref={form} onSubmit={sendEmail}>
-              <div className="mb-3">
-                <label className="form-label">Your Name</label>
-                <input
-                  type="text"
-                  name="from_name"
-                  className="form-control"
-                  placeholder="John Doe"
-                  required
-                />
-              </div>
+            <div className="card shadow border-0">
+              <div className="card-body p-4">
+                <h5 className="mb-4 text-primary">Send Me a Message</h5>
+                <form ref={form} onSubmit={sendEmail}>
+                  <div className="mb-3">
+                    <label className="form-label">Your Name</label>
+                    <input
+                      type="text"
+                      name="from_name"
+                      className="form-control"
+                      placeholder="John Doe"
+                      required
+                    />
+                  </div>
 
-              <div className="mb-3">
-                <label className="form-label">Your Email</label>
-                <input
-                  type="email"
-                  name="reply_to"
-                  className="form-control"
-                  placeholder="you@example.com"
-                  required
-                />
-              </div>
+                  <div className="mb-3">
+                    <label className="form-label">Your Email</label>
+                    <input
+                      type="email"
+                      name="reply_to"
+                      className="form-control"
+                      placeholder="you@example.com"
+                      required
+                    />
+                  </div>
 
-              <div className="mb-3">
-                <label className="form-label">Subject</label>
-                <input
-                  type="text"
-                  name="subject"
-                  className="form-control"
-                  placeholder="Let's Talk!"
-                />
-              </div>
+                  <div className="mb-3">
+                    <label className="form-label">Subject</label>
+                    <input
+                      type="text"
+                      name="subject"
+                      className="form-control"
+                      placeholder="Let's Talk!"
+                    />
+                  </div>
 
-              <div className="mb-3">
-                <label className="form-label">Message</label>
-                <textarea
-                  name="message"
-                  className="form-control"
-                  rows="5"
-                  placeholder="Write your message here..."
-                  required
-                ></textarea>
-              </div>
+                  <div className="mb-3">
+                    <label className="form-label">Message</label>
+                    <textarea
+                      name="message"
+                      className="form-control"
+                      rows="5"
+                      placeholder="Write your message here..."
+                      required
+                    ></textarea>
+                  </div>
 
-              <button type="submit" className="btn btn-primary px-4">
-                Send Message
-              </button>
-            </form>
+                  <button type="submit" className="btn btn-primary px-4">
+                    Send Message
+                  </button>
+                </form>
+              </div>
+            </div>
           </div>
 
           {/* Contact Info */}
           <div className="col-md-5">
-            <div className="bg-light p-4 rounded shadow-sm h-100 d-flex flex-column justify-content-between">
-              <div>
-                <h5 className="fw-bold mb-2">Contact Info                 <hr /> </h5>
-                <ul className="list-unstyled mb-4 p-0 list-contact">
-                  <li className="mb-2 ">
-                    <i className="bi bi-envelope-fill me-2 text-primary h4"></i>
-                    <a href="mailto:rajib01943075658@gmail.com" className="text-decoration-none text-dark">
-                      rajib01943075658@gmail.com
-                    </a>
-                  </li>
-                  <li className="mb-3">
-                    <i className="bi bi-phone-fill me-2 h4 text-primary"></i>
-                    <a href="tel:+8801996973025" className="text-decoration-none text-dark">
-                      +8801996973025
-                    </a>
-                  </li>
-                  <li className="mb-3">
-                    <i className="bi bi-geo-alt-fill h4 me-2 text-primary"></i>
-                    <a href="https://goo.gl/maps/your-google-map-link" target="_blank" rel="noopener noreferrer" className="text-decoration-none text-dark">
-                      Dhaka, Bangladesh
-                    </a>
-                  </li>
-                </ul>
-              </div>
+            <div className="card bg-light shadow-sm border-0 h-100">
+              <div className="card-body p-4 d-flex flex-column justify-content-between">
+                <div>
+                  <h5 className="text-primary mb-3">Contact Information</h5>
+                  <ul className="list-unstyled">
+                    <li className="mb-3 d-flex align-items-center">
+                      <i className="bi bi-envelope-fill me-2 text-primary fs-5"></i>
+                      <a href="mailto:rajib01943075658@gmail.com" className="text-dark text-decoration-none">
+                        rajib01943075658@gmail.com
+                      </a>
+                    </li>
+                    <li className="mb-3 d-flex align-items-center">
+                      <i className="bi bi-phone-fill me-2 text-primary fs-5"></i>
+                      <a href="tel:+8801996973025" className="text-dark text-decoration-none">
+                        +8801996973025
+                      </a>
+                    </li>
+                    <li className="mb-3 d-flex align-items-center">
+                      <i className="bi bi-geo-alt-fill me-2 text-primary fs-5"></i>
+                      <a href="https://goo.gl/maps/your-google-map-link" target="_blank" rel="noopener noreferrer" className="text-dark text-decoration-none">
+                        Dhaka, Bangladesh
+                      </a>
+                    </li>
+                  </ul>
+                </div>
 
-              {/* Social Links */}
-              <div className="d-flex gap-3">
-                <a href="https://www.facebook.com/profile.php?id=100092192364083" target="_blank" rel="noopener noreferrer" className="text-primary fs-4">
-                  <i className="bi bi-facebook"></i>
-                </a>
-                <a href="https://wa.me/8801600299821" target="_blank" rel="noopener noreferrer" className="text-success fs-4">
-                  <i className="bi bi-whatsapp"></i>
-                </a>
-                <a href="mailto:rajib01943075658@gmail.com" className="text-danger fs-4">
-                  <i className="bi bi-envelope-fill"></i>
-                </a>
+                <div className="d-flex gap-3 mt-3">
+                  <a href="https://www.facebook.com/profile.php?id=100092192364083" target="_blank" rel="noopener noreferrer" className="text-primary fs-4">
+                    <i className="bi bi-facebook"></i>
+                  </a>
+                  <a href="https://wa.me/8801600299821" target="_blank" rel="noopener noreferrer" className="text-success fs-4">
+                    <i className="bi bi-whatsapp"></i>
+                  </a>
+                  <a href="mailto:rajib01943075658@gmail.com" className="text-danger fs-4">
+                    <i className="bi bi-envelope-fill"></i>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -150,30 +178,18 @@ const Contact = () => {
 
         {/* Success Modal */}
         {showModal && (
-          <div
-            className="modal show d-block fade"
-            tabIndex="-1"
-            role="dialog"
-            onClick={() => setShowModal(false)}
-          >
+          <div className="modal show d-block fade" tabIndex="-1" role="dialog" onClick={() => setShowModal(false)}>
             <div className="modal-dialog modal-dialog-centered" role="document">
               <div className="modal-content border-0 shadow">
                 <div className="modal-header bg-success text-white">
                   <h5 className="modal-title">Message Sent!</h5>
-                  <button
-                    type="button"
-                    className="btn-close"
-                    onClick={() => setShowModal(false)}
-                  ></button>
+                  <button type="button" className="btn-close" onClick={() => setShowModal(false)}></button>
                 </div>
                 <div className="modal-body">
                   <p>Thank you for contacting me. I’ll get back to you soon!</p>
                 </div>
                 <div className="modal-footer">
-                  <button
-                    onClick={() => setShowModal(false)}
-                    className="btn btn-secondary"
-                  >
+                  <button onClick={() => setShowModal(false)} className="btn btn-secondary">
                     Close
                   </button>
                 </div>

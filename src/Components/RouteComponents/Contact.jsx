@@ -40,7 +40,7 @@ const Contact = () => {
     <>
       <Seo 
         title="Contact Rajib Fakir | Hire Professional Full Stack Web Developer"
-        keywords="Contact Rajib Fakir, Hire Full Stack Developer, Freelance Web Developer Bangladesh, Web Development Contact, Project Inquiry, Hire Developer Bangladesh, Custom Website Solutions, Professional Web Development, Full Stack Development Services"
+        keywords="Contact Rajib Fakir,রাজিব,রাজিব ফকির,রাজিব হাসান,ফকির,রাজিব ওয়েব ডেভেলপার,rajib,fakir Hire Full Stack Developer, Freelance Web Developer Bangladesh, Web Development Contact, Project Inquiry, Hire Developer Bangladesh, Custom Website Solutions, Professional Web Development, Full Stack Development Services"
         path="/contact"
         description="Get in touch with Rajib Fakir — a professional Full Stack Web Developer from Bangladesh. Contact via email, WhatsApp, Facebook, or direct phone call for innovative, high-quality web solutions."
       />

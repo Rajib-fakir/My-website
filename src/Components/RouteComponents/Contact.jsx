@@ -45,28 +45,8 @@ const Contact = () => {
         description="Get in touch with Rajib Fakir — a professional Full Stack Web Developer from Bangladesh. Contact via email, WhatsApp, Facebook, or direct phone call for innovative, high-quality web solutions."
       />
 
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Person",
-          "name": "Rajib Fakir",
-          "url": "https://yourwebsite.com/contact",
-          "email": "rajib01943075658@gmail.com",
-          "telephone": "+8801996973025",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Dhaka",
-            "addressCountry": "Bangladesh"
-          },
-          "sameAs": [
-            "https://facebook.com/yourfacebookid",
-            "https://wa.me/8801996973025",
-            "mailto:rajib01943075658@gmail.com"
-          ]
-        })}
-      </script>
 
-      <div className="container py-5" id="contact">
+      <div className="container py-5 w-100 overflow-hidden" id="contact">
         <div className="text-center mb-5">
           <h2 className="fw-bold text-primary">Let's Get in Touch</h2>
           <p className="text-muted">
@@ -142,7 +122,7 @@ const Contact = () => {
                     <li className="mb-3 d-flex align-items-center">
                       <i className="bi bi-envelope-fill me-2 text-primary fs-5"></i>
                       <a href="mailto:rajib01943075658@gmail.com" className="text-dark text-decoration-none">
-                        rajib01943075658@gmail.com
+                        
                       </a>
                     </li>
                     <li className="mb-3 d-flex align-items-center">
@@ -153,7 +133,7 @@ const Contact = () => {
                     </li>
                     <li className="mb-3 d-flex align-items-center">
                       <i className="bi bi-geo-alt-fill me-2 text-primary fs-5"></i>
-                      <a href="https://goo.gl/maps/your-google-map-link" target="_blank" rel="noopener noreferrer" className="text-dark text-decoration-none">
+                      <a href="https://www.google.com/maps/embed/v1/place?q=%E0%A6%86%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A6%BE%E0%A6%87%E0%A6%B0%20%E0%A6%AC%E0%A6%BF%E0%A6%B2&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8" target="_blank" rel="noopener noreferrer" className="text-dark text-decoration-none">
                         Dhaka, Bangladesh
                       </a>
                     </li>
@@ -175,6 +155,22 @@ const Contact = () => {
             </div>
           </div>
         </div>
+
+<div className="m-1 p-1">
+<hr className="text-light bg-light"/>
+<iframe
+      width="100%"
+      height="200px"
+      style={{ border: 0 }}
+      allowFullScreen
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps/embed/v1/place?q=%E0%A6%86%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A6%BE%E0%A6%87%E0%A6%B0%20%E0%A6%AC%E0%A6%BF%E0%A6%B2&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+      title="Andair Bill Location"
+    ></iframe>
+</div>
+
+
 
         {/* Success Modal */}
         {showModal && (

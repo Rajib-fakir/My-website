@@ -16,7 +16,7 @@ const About = () => {
 
     
     
-    <div className="about-container p-0 m-0">
+    <div className="about-container pt-5 m-0 overflow-hidden w-100">
       {/* Hero Section */}
 
 <section className="about-content container p-0 m-0  ">

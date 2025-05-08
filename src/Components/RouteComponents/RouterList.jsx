@@ -33,9 +33,9 @@ useEffect(() => {
 
   return (
     <div>
-      <nav  className="navbar">
-        <div data-aos="fade-in" className="logo">
-        <img src={logo} alt="logo"  className="img-logo"/>
+      <nav  className="navbar p-0">
+        <div  className="logo">
+        <img src="/Images/favicon.ico" alt="logo"  className="img-logo"/>
         
         </div>
         {/* Hamburger Menu */}
